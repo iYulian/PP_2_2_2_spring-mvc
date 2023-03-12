@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" xmlns:form="http://www.w3.org/1999/html">
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title></title>
+</head>
+<body>
+<div>
+
+  <form action="cars" method="get">
+    <input type="number" th:name="count" placeholder="Write the number of cars"/>
+    <input type="submit"/>
+  </form>
+
+  <table border="1">
+    <tr>
+      <th>brand</th>
+      <th>model</th>
+      <th>price</th>
+    </tr>
+    <tr>
+      <tr th:each="msg : ${cars}">
+        <td th:utext="${msg.getBrand()}">brand</td>
+        <td th:utext="${msg.getModel()}">model</td>
+        <td th:utext="${msg.getPrice()}">price</td>
+      </tr>
+    </tr>
+  </table>
+
+</div>
+</body>
+</html>
