@@ -1,7 +1,6 @@
 package web.model;
 
 import org.springframework.stereotype.Repository;
-import web.controller.CarController;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -13,8 +12,6 @@ public class Car {
     private String brand;
 
     private int price;
-
-    private List<Car> carControllers;
 
     public Car() {
     }
@@ -60,4 +57,5 @@ public class Car {
         return carList;
 
     }
+
 }
