@@ -3,6 +3,7 @@ package web.dao;
 import web.model.Car;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class CarDaoImp implements CarDao{
 
@@ -15,14 +16,8 @@ public class CarDaoImp implements CarDao{
     @Override
     public List<Car> getCars(String numberOfCars) {
 
-        if (numberOfCars == null){
-            return car.getListCar(0);
-        } else if (Integer.parseInt(numberOfCars) > 5) {
-            return car.getListCar(5);
-        } else {
-            return car.getListCar(Integer.parseInt(numberOfCars));
-        }
+        return car.getListCar(5).stream().limit(Integer
+                .parseInt(numberOfCars == null ? "0": numberOfCars)).collect(Collectors.toList());
 
     }
-
 }
