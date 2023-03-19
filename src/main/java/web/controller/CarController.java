@@ -18,8 +18,6 @@ public class CarController {
 
         CarService carService = new CarServiceImp();
 
-        System.out.println(carService.getCars(httpServletRequest.getParameter("count")));
-
         model.addAttribute("cars", carService.getCars(httpServletRequest.getParameter("count")));
 
         return "cars";
